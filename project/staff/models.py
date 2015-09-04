@@ -11,7 +11,7 @@ class Department(models.Model):
 class Staff(models.Model):
 	name = models.CharField(max_length=50)
 	school = models.ForeignKey(School)
-	role = models.CharField(max_length=50)
+	role = models.CharField(max_length=50, blank=True)
 	department = models.ForeignKey(Department)
 	photo = models.ImageField(upload_to='images')
 

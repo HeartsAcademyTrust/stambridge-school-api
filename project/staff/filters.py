@@ -5,6 +5,7 @@ from .models import Staff, Vacancy
 
 class SchoolStaffFilter(django_filters.FilterSet):
 	school = django_filters.CharFilter(name="school__name")
+	department = django_filters.CharFilter(name="department__name")
 
 	class Meta:
 		model = Staff
@@ -12,6 +13,7 @@ class SchoolStaffFilter(django_filters.FilterSet):
 
 class SchoolVacancyFilter(django_filters.FilterSet):
 	school = django_filters.CharFilter(name="school__name")
+	department = django_filters.CharFilter(name="department__name")
 
 	class Meta:
 		model = Vacancy

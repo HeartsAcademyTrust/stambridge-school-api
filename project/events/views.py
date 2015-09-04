@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from .filters import EventFilter
+from .models import Event
+from .seralizers import EventSerializer
 
-# Create your views here.
+class EventListView(generics.ListAPIView):
+	queryset = Event.objects.all()
+	serializer_class = EventSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_class = EventFilter
