@@ -1,5 +1,4 @@
-from rest_framework import filters
-from rest_framework import generics
+from rest_framework import filters, generics
 from .filters import SchoolNewslettersFilter, SchoolPoliciesFilter
 from .models import SchoolMenu, Newsletter, Policy
 from .serializers import SchoolMenuSerializer, SchoolNewslettersSerializer, SchoolPoliciesSerializer

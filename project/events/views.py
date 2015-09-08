@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from rest_framework import filters, generics
 from .filters import EventFilter
 from .models import Event
-from .seralizers import EventSerializer
+from .serializers import EventSerializer
 
 class EventListView(generics.ListAPIView):
 	queryset = Event.objects.all()
