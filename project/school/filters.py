@@ -1,6 +1,6 @@
 import django_filters 
 from rest_framework.filters import BaseFilterBackend
-from .models import Newsletter, Policy
+from .models import Newsletter, Policy, StatuatoryInfo
 
 
 class SchoolNewslettersFilter(django_filters.FilterSet):
@@ -17,3 +17,11 @@ class SchoolPoliciesFilter(django_filters.FilterSet):
 	class Meta:
 		model = Policy
 		depth = 1
+
+class SchoolStatuatoryInfoFilter(django_filters.FilterSet):
+	school = django_filters.CharFilter(name="school__name")
+
+	class Meta:
+		model = StatuatoryInfo
+		depth = 1
+		order_by = ['-date_published']

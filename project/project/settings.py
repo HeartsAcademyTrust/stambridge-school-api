@@ -40,8 +40,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'photologue',
-    'sortedm2m',
     'school',
     'events',
     'staff',
@@ -114,5 +112,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
-
-SITE_ID = 1

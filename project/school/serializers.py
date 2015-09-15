@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import SchoolMenu, Newsletter, Policy
+from .models import SchoolMenu, StatuatoryInfo, Newsletter, Policy
 
 
 class SchoolMenuSerializer(ModelSerializer):
@@ -16,3 +16,8 @@ class SchoolPoliciesSerializer(ModelSerializer):
     class Meta:
         model = Policy
         depth = 1
+
+class SchoolStatuatoryInfoSerializer(ModelSerializer):
+		class Meta:
+				model = StatuatoryInfo
+				depth = 1

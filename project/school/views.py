@@ -1,7 +1,7 @@
 from rest_framework import filters, generics
-from .filters import SchoolNewslettersFilter, SchoolPoliciesFilter
-from .models import SchoolMenu, Newsletter, Policy
-from .serializers import SchoolMenuSerializer, SchoolNewslettersSerializer, SchoolPoliciesSerializer
+from .filters import SchoolNewslettersFilter, SchoolPoliciesFilter, SchoolStatuatoryInfoFilter
+from .models import SchoolMenu, Newsletter, Policy, StatuatoryInfo
+from .serializers import SchoolMenuSerializer, SchoolNewslettersSerializer, SchoolPoliciesSerializer, SchoolStatuatoryInfoSerializer
 
 
 class SchoolMenuView(generics.RetrieveAPIView):
@@ -21,3 +21,9 @@ class SchoolPoliciesListView(generics.ListAPIView):
 	serializer_class = SchoolPoliciesSerializer
 	filter_backends = (filters.DjangoFilterBackend,)
 	filter_class = SchoolPoliciesFilter
+
+class SchoolStatuatoryInfoListView(generics.ListAPIView):
+	queryset = StatuatoryInfo.objects.all()
+	serializer_class = SchoolStatuatoryInfoSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_class = SchoolStatuatoryInfoFilter

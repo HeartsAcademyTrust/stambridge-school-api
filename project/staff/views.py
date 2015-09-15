@@ -1,18 +1,12 @@
 from rest_framework import filters
 from rest_framework import generics
-from .filters import SchoolStaffFilter, SchoolVacancyFilter
-from .models import Staff, Vacancy
-from .serializers import StaffSerializer, VacancySerializer
+from .filters import SchoolDepartmentFilter
+from .models import Department
+from .serializers import DepartmentSerializer
 
 
-class StaffListView(generics.ListAPIView):
-	queryset = Staff.objects.all()
-	serializer_class = StaffSerializer
+class DepartmentListView(generics.ListAPIView):
+	queryset = Department.objects.all().distinct()
+	serializer_class = DepartmentSerializer
 	filter_backends = (filters.DjangoFilterBackend,)
-	filter_class = SchoolStaffFilter
-
-class VacancyListView(generics.ListAPIView):
-	queryset = Vacancy.objects.all()
-	serializer_class = VacancySerializer
-	filter_backends = (filters.DjangoFilterBackend,)
-	filter_class = SchoolStaffFilter
+	filter_class = SchoolDepartmentFilter

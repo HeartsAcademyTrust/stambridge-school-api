@@ -1,8 +1,7 @@
 from django.conf.urls import url
-from .views import StaffListView, VacancyListView
+from .views import DepartmentListView
 
 
 urlpatterns = [
-    url(r'^staff/$', StaffListView.as_view(), name='staff'),
-    url(r'^vacancies/$', VacancyListView.as_view(), name='vacancies'),
+		url(r'^departments/$', DepartmentListView.as_view(), name='department')
 ]
