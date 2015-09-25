@@ -9,7 +9,7 @@ class Event(models.Model):
 	description = models.TextField(blank=True)
 	start_time = models.DateTimeField(default=timezone.now)
 	end_time = models.DateTimeField(null=True)
-	holiday = models.BooleanField(default=False)
+	term = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.school.name + ': ' + self.name

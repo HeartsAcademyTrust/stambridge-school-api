@@ -23,10 +23,25 @@ class SchoolYear(models.Model):
 
 class SchoolMenu(models.Model):
 	school = models.OneToOneField(School)
+	text = models.TextField(blank=True)
 	menu = models.FileField(upload_to='documents')
 
 	def __str__(self):
 		return self.school.name + ' menu'
+
+class SchoolLetters(models.Model):
+	year = models.ForeignKey(SchoolYear, related_name='letters')
+	title = models.CharField(max_length=50)
+	description = models.TextField(blank=True)
+	deadline = models.DateField()
+	file = models.FileField(upload_to='lettersHome')
+
+	class Meta:
+		unique_together = ('year', 'title')
+		ordering = ['deadline']
+
+	def __str__(self):
+		return self.year.school.name + ': ' + self.year.year + ' ' + self.title
 
 class Newsletter(models.Model):
 	school = models.ForeignKey(School)
@@ -45,7 +60,7 @@ class Policy(models.Model):
 	def __str__(self):
 		return self.school.name + ': ' + self.title
 
-class StatuatoryInfo(models.Model):
+class StatutoryInfo(models.Model):
 	school = models.ForeignKey(School)
 	title = models.CharField(max_length=50)
 	description = models.TextField(blank=True)
