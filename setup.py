@@ -10,6 +10,7 @@ setup(name='HeartAcademyTrust-Api',
       'Django==1.8',
       'Pillow==2.9.0',
       'django-filter==0.11.0',
-      'djangorestframework==3.2.3'
+      'djangorestframework==3.2.3',
+      'django-cors-headers==1.1.0'
       ],
      )
