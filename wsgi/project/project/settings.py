@@ -92,7 +92,7 @@ DATABASES = {
 
 
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/media/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
