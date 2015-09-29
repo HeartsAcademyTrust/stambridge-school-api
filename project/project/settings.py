@@ -110,4 +110,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
+
 CORS_ORIGIN_ALLOW_ALL = True
