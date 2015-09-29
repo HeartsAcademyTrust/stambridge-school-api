@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 
-MEDIA_ROOT = os.path.join(DJ_PROJECT_DIR, 'media')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Internationalization
