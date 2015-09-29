@@ -1,10 +1,15 @@
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='HeartAcademyTrust-Api',
       version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
+      description='Django Web Server for all the schools part of the Hearts Academy Trust',
+      author='Vasia Shelkov',
+      author_email='vasilyshelkov@hotmail.co.uk',
       url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
+      install_requires=[
+      'Django==1.8',
+      'Pillow==2.9.0',
+      'django-filter==0.11.0',
+      'djangorestframework==3.2.3'
+      ],
      )
