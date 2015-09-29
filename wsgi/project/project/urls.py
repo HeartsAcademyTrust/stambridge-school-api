@@ -12,4 +12,4 @@ urlpatterns = [
 	url(r'^schools/', include('school.urls')),
 	url(r'^jobs/', include('staff.urls')),
 	url(r'^events/', include('events.urls')),
-] + static(settings.MEDIA_ROOT, document_root=settings.MEDIA_URL)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
