@@ -16,5 +16,5 @@ mkdir "$OPENSHIFT_REPO_DIR"wsgi/static
 mkdir "$OPENSHIFT_REPO_DIR"wsgi/static/media
 fi
 
-echo "Executing 'python ln -sf $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/wsgi/static/'"
-ln -sf "$OPENSHIFT_DATA_DIR"media "$OPENSHIFT_REPO_DIR"wsgi/static/
+echo "Executing 'python ln -sf $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/wsgi/static'"
+ln -sf "$OPENSHIFT_DATA_DIR"media "$OPENSHIFT_REPO_DIR"wsgi/static
