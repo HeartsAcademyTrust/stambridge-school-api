@@ -5,12 +5,12 @@
 # could be python, php, ruby, etc.
 
 # Activate VirtualEnv in order to use the correct libraries
-if [ ! -d $OPENSHIFT_DATA_DIR/media ]; then
+if [ ! -d "$OPENSHIFT_DATA_DIR"/media ]; then
 echo "Executing 'python mkdir $OPENSHIFT_DATA_DIR/media'"
 mkdir "$OPENSHIFT_DATA_DIR"media
 fi
 
-if [ ! -d $OPENSHIFT_REPO_DIRwsgi/static/media ]; then
+if [ ! -d "$OPENSHIFT_REPO_DIR"wsgi/static/media ]; then
 echo "Executing 'python mkdir $OPENSHIFT_REPO_DIRwsgi/static/media'"
 mkdir "$OPENSHIFT_REPO_DIR"wsgi/static/media
 fi
