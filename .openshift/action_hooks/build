@@ -12,6 +12,7 @@ fi
 
 if [ ! -d "$OPENSHIFT_REPO_DIR"wsgi/static/media ]; then
 echo "Executing 'python mkdir $OPENSHIFT_REPO_DIRwsgi/static/media'"
+mkdir "$OPENSHIFT_REPO_DIR"wsgi/static
 mkdir "$OPENSHIFT_REPO_DIR"wsgi/static/media
 fi
 
