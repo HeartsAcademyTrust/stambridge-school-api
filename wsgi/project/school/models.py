@@ -69,3 +69,13 @@ class StatutoryInfo(models.Model):
 
 	def __str__(self):
 		return self.school.name + ': ' + self.title + ' - ' + str(self.date_published)
+
+class Performance(models.Model):
+	school = models.ForeignKey(School)
+	title = models.CharField(max_length=50)
+	extra_notes = models.TextField(blank=True)
+	date_published = models.DateField(default=timezone.now)
+	file = models.FileField(upload_to='performance')
+
+	def __str__(self):
+		return self.school.name + ': ' + self.title + ' - ' + str(self.date_published)

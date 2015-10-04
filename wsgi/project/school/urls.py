@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import SchoolMenuView, SchoolYearView, SchoolNewslettersListView, SchoolPoliciesListView, SchoolStatutoryInfoListView
+from .views import SchoolMenuView, SchoolYearView, SchoolNewslettersListView, SchoolPoliciesListView, SchoolStatutoryInfoListView, SchoolPerformanceListView
 
 
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^newsletters/$', SchoolNewslettersListView.as_view(), name='school-newsletters'),   
     url(r'^policies/$', SchoolPoliciesListView.as_view(), name='school-policies'),
     url(r'^statuatory-info/$', SchoolStatutoryInfoListView.as_view(), name='school-statutory-info'),
+    url(r'^performance/$', SchoolPerformanceListView.as_view(), name='school-performance'),
 ]
