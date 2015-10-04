@@ -1,10 +1,3 @@
-	# SCHOOL_CHOICES = (
-	# 	(BRISCOE, 'Brisoe Primary School and Nursery'),
-	# 	(WICKFORD, 'Wickford Church of England School'),
-	# 	(WATERMAN, 'Waterman Primary School'),
-	# 	(STAMBRIDGE, 'Stambridge Primary School'),
-	# 	(HEARTS, 'Hearts Academy Trust')
-	# )
 from django.db import models
 from django.utils import timezone
 
@@ -77,5 +70,11 @@ class Performance(models.Model):
 	date_published = models.DateField(default=timezone.now)
 	file = models.FileField(upload_to='performance')
 
+class Curriculum(models.Model):
+	school = models.OneToOneField(School)
+	extra_notes = models.TextField(blank=True)
+	date_published = models.DateField(default=timezone.now)
+	file = models.FileField(upload_to='curriculum')
+
 	def __str__(self):
-		return self.school.name + ': ' + self.title + ' - ' + str(self.date_published)
+		return self.school.name + ': ' + str(self.date_published)

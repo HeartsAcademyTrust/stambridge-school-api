@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School, SchoolYear, SchoolMenu, SchoolLetters, StatutoryInfo, Newsletter, Policy, Performance
+from .models import School, SchoolYear, SchoolMenu, SchoolLetters, StatutoryInfo, Newsletter, Policy, Performance, Curriculum
 
 admin.site.register(School)
 admin.site.register(SchoolYear)
@@ -9,3 +9,4 @@ admin.site.register(Newsletter)
 admin.site.register(Policy)
 admin.site.register(StatutoryInfo)
 admin.site.register(Performance)
+admin.site.register(Curriculum)

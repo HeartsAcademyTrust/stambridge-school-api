@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import SchoolMenu, SchoolYear, StatutoryInfo, SchoolLetters, Newsletter, Policy, Performance
+from .models import SchoolMenu, SchoolYear, StatutoryInfo, SchoolLetters, Newsletter, Policy, Performance, Curriculum
 
 
 class SchoolMenuSerializer(ModelSerializer):
@@ -40,3 +40,8 @@ class SchoolPerformanceSerializer(ModelSerializer):
     class Meta:
         model = Performance
         depth = 1           
+
+class SchoolCurriculumSerializer(ModelSerializer):
+    class Meta:
+        model = Curriculum
+        depth = 1
