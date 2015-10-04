@@ -36,6 +36,20 @@ class SchoolLetters(models.Model):
 	def __str__(self):
 		return self.year.school.name + ': ' + self.year.year + ' ' + self.title
 
+class SchoolHomework(models.Model):
+	year = models.ForeignKey(SchoolYear, related_name='homework')
+	title = models.CharField(max_length=50)
+	description = models.TextField(blank=True)
+	deadline = models.DateField()
+	file = models.FileField(upload_to='lettersHome')
+
+	class Meta:
+		unique_together = ('year', 'title')
+		ordering = ['deadline']
+
+	def __str__(self):
+		return self.year.school.name + ': ' + self.year.year + ' ' + self.title
+
 class Newsletter(models.Model):
 	school = models.ForeignKey(School)
 	date_published = models.DateField(default=timezone.now)

@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import SchoolMenu, SchoolYear, StatutoryInfo, SchoolLetters, Newsletter, Policy, Performance, Curriculum, Admissions
+from .models import SchoolMenu, SchoolYear, StatutoryInfo, SchoolLetters, SchoolHomework, Newsletter, Policy, Performance, Curriculum, Admissions
 
 
 class SchoolMenuSerializer(ModelSerializer):
@@ -13,12 +13,19 @@ class SchoolLettersSerializer(ModelSerializer):
         depth = 1
         fields = ('title', 'description', 'deadline', 'file')
 
+class SchoolHomeworkSerializer(ModelSerializer):
+    class Meta:
+        model = SchoolHomework
+        depth = 1
+        fields = ('title', 'description', 'deadline', 'file')
+
 class SchoolYearSerializer(ModelSerializer):
     letters = SchoolLettersSerializer(many=True, read_only=True)
+    homework = SchoolHomeworkSerializer(many=True, read_only=True)
 
     class Meta:
         model = SchoolYear
-        fields = ('year', 'school', 'letters')
+        fields = ('year', 'school', 'letters', 'homework')
         depth = 1;
 
 class SchoolNewslettersSerializer(ModelSerializer):
