@@ -70,11 +70,23 @@ class Performance(models.Model):
 	date_published = models.DateField(default=timezone.now)
 	file = models.FileField(upload_to='performance')
 
+	def __str__(self):
+		return self.school.name + ': ' + self.title + ' - ' + str(self.date_published)
+
 class Curriculum(models.Model):
 	school = models.OneToOneField(School)
 	extra_notes = models.TextField(blank=True)
 	date_published = models.DateField(default=timezone.now)
 	file = models.FileField(upload_to='curriculum')
+
+	def __str__(self):
+		return self.school.name + ': ' + str(self.date_published)
+
+class Admissions(models.Model):
+	school = models.OneToOneField(School)
+	extra_notes = models.TextField(blank=True)
+	date_published = models.DateField(default=timezone.now)
+	file = models.FileField(upload_to='admissions')
 
 	def __str__(self):
 		return self.school.name + ': ' + str(self.date_published)

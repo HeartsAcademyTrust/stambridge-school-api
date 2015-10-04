@@ -1,7 +1,7 @@
 from rest_framework import filters, generics
 from .filters import SchoolYearFilter, SchoolNewslettersFilter, SchoolPoliciesFilter, SchoolStatutoryInfoFilter, SchoolPerformanceFilter
-from .models import SchoolMenu, SchoolYear, Newsletter, Policy, StatutoryInfo, Performance, Curriculum
-from .serializers import SchoolMenuSerializer, SchoolYearSerializer, SchoolNewslettersSerializer, SchoolPoliciesSerializer, SchoolStatutoryInfoSerializer, SchoolPerformanceSerializer, SchoolCurriculumSerializer
+from .models import SchoolMenu, SchoolYear, Newsletter, Policy, StatutoryInfo, Performance, Curriculum, Admissions
+from .serializers import SchoolMenuSerializer, SchoolYearSerializer, SchoolNewslettersSerializer, SchoolPoliciesSerializer, SchoolStatutoryInfoSerializer, SchoolPerformanceSerializer, SchoolCurriculumSerializer, SchoolAdmissionsSerializer
 
 
 class SchoolYearView(generics.ListAPIView):
@@ -43,5 +43,11 @@ class SchoolPerformanceListView(generics.ListAPIView):
 class SchoolCurriculumView(generics.RetrieveAPIView):
 	queryset = Curriculum.objects.all()
 	serializer_class = SchoolCurriculumSerializer
+	lookup_field = 'school__name'
+	lookup_url_kwarg = 'school'
+
+class SchoolAdmissionsView(generics.RetrieveAPIView):
+	queryset = Admissions.objects.all()
+	serializer_class = SchoolAdmissionsSerializer
 	lookup_field = 'school__name'
 	lookup_url_kwarg = 'school'
