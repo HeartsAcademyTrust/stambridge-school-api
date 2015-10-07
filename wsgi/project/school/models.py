@@ -88,7 +88,8 @@ class Performance(models.Model):
 		return self.school.name + ': ' + self.title + ' - ' + str(self.date_published)
 
 class Curriculum(models.Model):
-	school = models.OneToOneField(School)
+	school = models.ForeignKey(School)
+	title = models.CharField(max_length=50, default='Curriculum')
 	extra_notes = models.TextField(blank=True)
 	date_published = models.DateField(default=timezone.now)
 	file = models.FileField(upload_to='curriculum')

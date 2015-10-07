@@ -1,6 +1,6 @@
 import django_filters 
 from rest_framework.filters import BaseFilterBackend
-from .models import Newsletter, Policy, Performance, StatutoryInfo, SchoolYear
+from .models import Newsletter, Policy, Performance, StatutoryInfo, SchoolYear, Curriculum
 
 
 class SchoolYearFilter(django_filters.FilterSet):
@@ -38,5 +38,13 @@ class SchoolPerformanceFilter(django_filters.FilterSet):
 
 	class Meta:
 		model = Performance
+		depth = 1
+		order_by = ['-date_published']
+
+class SchoolCurriculumFilter(django_filters.FilterSet):
+	school = django_filters.CharFilter(name="school__name")
+
+	class Meta:
+		model = Curriculum
 		depth = 1
 		order_by = ['-date_published']
